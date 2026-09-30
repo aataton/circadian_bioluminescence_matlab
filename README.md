@@ -1,6 +1,6 @@
 # MATLAB Circadian Bioluminescence Analysis Pipeline
 
-A configurable MATLAB pipeline for analysing circadian bioluminescence time-series data. The workflow reads plate-based luminescence measurements, groups replicate wells defined in plain-text parameter files, interpolates missing values, optionally detrends the data, fits chirped damped cosine models to user-defined time segments, and exports per-sample results and publication-ready figures.
+A configurable MATLAB pipeline for analysing circadian bioluminescence time-series data. The workflow reads plate-based luminescence measurements, groups replicate wells defined in plain-text parameter files, interpolates missing values, optionally detrends the data, fits chirped damped cosine models to user-defined time segments, and exports per-sample results and figures.
 
 The repository also includes configurable workflows to:
 
@@ -371,42 +371,6 @@ Set line 14 in the parameter file to the time to be treated as phase zero. For e
 - Use `Q10_config.m` for strain labels, fit model, period limits, temperature colors, figure layout, and omitted/blank temperature positions.
 - Use `PRC_config.m` for PRC colors, strain labels, marker/line styles, figure layout, tile definitions, and data-path conventions.
 
-## Reproducibility and version control
-
-Recommended practices:
-
-- Commit the MATLAB source files, shell launchers, raw input data when sharing permissions allow, and every parameter/configuration file required to recreate a figure.
-- Record the MATLAB release and toolbox versions used for each release or manuscript analysis.
-- Keep a stable tag or archived commit associated with each submitted figure set.
-- Do not overwrite original raw CSV files. Use parameter files and output prefixes to define distinct analyses.
-- Treat output files as derived products. If they are not committed, document the exact commands used to recreate them.
-- Review the terminal output after each batch run for missing files, invalid sample-column names, fit warnings, and segment-end adjustments.
-
-A useful `.gitignore` starting point is:
-
-```gitignore
-# MATLAB autosave and temporary files
-*.asv
-*.autosave
-*.m~
-
-# Regenerable MATLAB figures and analysis products
-*_plot.fig
-*_plot.pdf
-*_MeanStd.csv
-*_individual_*.csv
-*_damping_coefficients.csv
-*_phase_coherence.csv
-*_phase_drift.csv
-*.png
-*.svg
-
-# OS/editor files
-.DS_Store
-Thumbs.db
-```
-
-Do **not** ignore parameter `.txt` files, raw input `.csv` files, `.m` source files, or `.sh` launchers if they are required to reproduce analyses. Adjust the ignore list if you intentionally want selected final manuscript figures or curated output tables tracked in Git.
 
 ## Troubleshooting
 
@@ -428,25 +392,9 @@ Do **not** ignore parameter `.txt` files, raw input `.csv` files, `.m` source fi
 - The pipeline estimates a model-based period and acrophase; results depend on sampling density, fit window, detrending choice, biological replicate quality, and the suitability of the chirped damped-cosine model.
 - Missing observations are interpolated/extrapolated before group summary and fitting. Extensive missing data can therefore materially affect estimates and should be reviewed rather than treated as neutral.
 - The period search is constrained to 18–30 h. Oscillations outside this range are not appropriate for the default fit settings without modifying `Plot_rawLuminescence.m`/`analyzeAndPlotSegments.m`.
-- Q10 and PRC calculations are descriptive analysis outputs. They do not replace experimental-design decisions, independent replicate structure, or statistical inference tailored to the underlying biological question.
 - Generated filenames are defined by parameter-file and configuration conventions. Renaming outputs manually can break downstream summary, Q10, or PRC path resolution.
 
-## License and copyright
 
-Copyright (c) 2026 **[Arnaud Taton / Susan S. Golden Laboratory / University of California San Diego]**.
-
-Unless a different license file is included in this repository, all rights are reserved. You may inspect and use this code for internal research purposes, but redistribution, modification, publication of derivative software, or commercial use is not granted by this notice alone.
-
-Before making a public GitHub repository, choose and add a dedicated `LICENSE` file. A common permissive option is the MIT License; it permits reuse, modification, and redistribution provided that the copyright and license notice are retained. If you select MIT, replace the copyright section above with the license notice and include the complete MIT text in `LICENSE`.
-
-Suggested source-file header for project-created `.m` and `.sh` files:
-
-```text
-Copyright (c) 2026 [Copyright holder / laboratory / institution name]
-
-This file is part of the MATLAB Circadian Bioluminescence Analysis Pipeline.
-See the LICENSE file in the repository root for license terms.
-```
 
 ### Third-party and platform notices
 
