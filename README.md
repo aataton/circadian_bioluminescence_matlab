@@ -404,13 +404,8 @@ Set line 14 in the parameter file to the time to be treated as phase zero. For e
 
 ## Citation
 
-If you use this pipeline in a manuscript, cite the associated publication when available and identify the repository version or commit used for analysis. Until a formal archival release is created, a suggested acknowledgment is:
+If you use this pipeline in a manuscript, cite the associated publication when available and identify the repository version or commit used for analysis. 
 
-```text
-Circadian bioluminescence data were analyzed using the MATLAB Circadian
-Bioluminescence Analysis Pipeline (MATLAB R2025a; repository version/commit:
-[insert identifier]).
-```
 ## Acknowledgments
 The code for this pipeline was developed with assistance from Perplexity AI, and this README was drafted by Perplexity AI and reviewed by the repository maintainer.
 
