@@ -1,0 +1,41 @@
+dkaiAWTgm_1_1a, dkaiAWTgm_1_1b, dkaiAWTgm_1_1d, dkaiAWTgm_1_2a, dkaiAWTgm_1_2b, dkaiAWTgm_1_2c, dkaiAWTgm_1_2d, dkaiAWTgm_1_3b, dkaiAWTgm_1_3d, dkaiAWTgm_2_1a, dkaiAWTgm_2_1b, dkaiAWTgm_2_1c, dkaiAWTgm_2_1d, dkaiAWTgm_2_2a, dkaiAWTgm_2_2b, dkaiAWTgm_2_2d, dkaiAWTgm_2_3b, dkaiAWTgm_2_3d, dkaiAWTgm_3_1a, dkaiAWTgm_3_1b, dkaiAWTgm_3_1c, dkaiAWTgm_3_1d, dkaiAWTgm_3_2a, dkaiAWTgm_3_2b, dkaiAWTgm_3_2c, dkaiAWTgm_3_2d, dkaiAWTgm_3_3b, dkaiAWTgm_3_3d, dkaiAWTgm_4_1a, dkaiAWTgm_4_1b, dkaiAWTgm_4_1c, dkaiAWTgm_4_1d, dkaiAWTgm_4_2a, dkaiAWTgm_4_2b, dkaiAWTgm_4_2c, dkaiAWTgm_4_2d
+Exp02Anabaena4LDcycles/dkaiA_WTgm
+[100, 168]
+0
+[0, 0, 0, 0]
+4
+1
+1
+1
+1
+1
+18
+shadesOfRed
+96
+
+%  1 - Sample names (column names separated by ',')
+%  2 - Name or path for the sample series to save plot and analyses : e.g. 27C/kaiA148L156A_27C
+%  3 - Segments to analyse : e.g. [24, 84; 48, 108]
+%  4 - Detrend the data : 0 or 1
+%  5 - Shaded area (e.g. for dark pulse [50, 54; 54, 50])
+%  6 - Number of nights : 0, 1, 2 or etc.
+%  7 - Plot time series : 0 or 1
+%  8 - Plot means : 0 or 1
+%  9 - Plot the standard deviations : 0 or 1
+% 10 - PLot individual fitted curves : 0 or 1
+% 11 - Plot average fitted curves : 0 or 1
+% 12 - Height of the figure : ~ ylims/2
+% 13 - Color palette: e.g shadesOfOrange (max 20 shades or multicolor)
+
+
+% shadesOfRed,  shadesOfGreen,  shadesOfBlue,  shadesOfYellow,  shadesOfOrange,  shadesOfBrown, 
+% shadesOfGrey,  shadesOfPurple,  multicolor,   blackAndWhite (default)
+
+
+%selection on 05112026
+% dkaiAWTgm_1_1c, dkaiAWTgm_2_2c, 
+
+
+%first select
+%dkaiAWTgm_1_1a,dkaiAWTgm_1_1b,dkaiAWTgm_1_1c,dkaiAWTgm_1_1d,dkaiAWTgm_1_2a,dkaiAWTgm_1_2b,dkaiAWTgm_1_2c,dkaiAWTgm_1_2d,dkaiAWTgm_1_3b,dkaiAWTgm_1_3d,dkaiAWTgm_2_1a,dkaiAWTgm_2_1b,dkaiAWTgm_2_1c,dkaiAWTgm_2_1d,dkaiAWTgm_2_2a,dkaiAWTgm_2_2b,dkaiAWTgm_2_2c,dkaiAWTgm_2_2d,dkaiAWTgm_2_3b,dkaiAWTgm_2_3d,dkaiAWTgm_3_1a,dkaiAWTgm_3_1b,dkaiAWTgm_3_1c,dkaiAWTgm_3_1d,dkaiAWTgm_3_2a,dkaiAWTgm_3_2b,dkaiAWTgm_3_2c,dkaiAWTgm_3_2d,dkaiAWTgm_3_3b,dkaiAWTgm_3_3d,dkaiAWTgm_4_1a,dkaiAWTgm_4_1b,dkaiAWTgm_4_1c,dkaiAWTgm_4_1d,dkaiAWTgm_4_2a,dkaiAWTgm_4_2b,dkaiAWTgm_4_2c,dkaiAWTgm_4_2d
+

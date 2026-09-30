@@ -1,0 +1,40 @@
+dkaiAL156A_1_1a, dkaiAL156A_1_1b, dkaiAL156A_1_1c, dkaiAL156A_1_1d, dkaiAL156A_1_2a, dkaiAL156A_1_2b, dkaiAL156A_1_2c, dkaiAL156A_1_2d, dkaiAL156A_1_3b, dkaiAL156A_1_3d, dkaiAL156A_2_1a, dkaiAL156A_2_1b, dkaiAL156A_2_1c, dkaiAL156A_2_1d, dkaiAL156A_2_2a, dkaiAL156A_2_2b, dkaiAL156A_2_2c, dkaiAL156A_2_2d, dkaiAL156A_3_1a, dkaiAL156A_3_1b, dkaiAL156A_3_1c, dkaiAL156A_3_1d, dkaiAL156A_3_2a, dkaiAL156A_3_2b, dkaiAL156A_3_2c, dkaiAL156A_3_2d, dkaiAL156A_3_3a, dkaiAL156A_3_3c
+Exp02Anabaena4LDcycles/dkaiA_L156A
+[100, 114]
+0
+[0, 0, 0, 0]
+4
+1
+1
+1
+1
+1
+10
+shadesOfYellow
+96
+
+%  1 - Sample names (column names separated by ',')
+%  2 - Name or path for the sample series to save plot and analyses : e.g. 27C/kaiA148L156A_27C
+%  3 - Segments to analyse : e.g. [24, 84; 48, 108]
+%  4 - Detrend the data : 0 or 1
+%  5 - Shaded area (e.g. for dark pulse [50, 54; 54, 50])
+%  6 - Number of nights : 0, 1, 2 or etc.
+%  7 - Plot time series : 0 or 1
+%  8 - Plot means : 0 or 1
+%  9 - Plot the standard deviations : 0 or 1
+% 10 - PLot individual fitted curves : 0 or 1
+% 11 - Plot average fitted curves : 0 or 1
+% 12 - Height of the figure : ~ ylims/2
+% 13 - Color palette: e.g shadesOfOrange (max 20 shades or multicolor)
+
+
+% shadesOfRed,  shadesOfGreen,  shadesOfBlue,  shadesOfYellow,  shadesOfOrange,  shadesOfBrown, 
+% shadesOfGrey,  shadesOfPurple,  multicolor,   blackAndWhite (default)
+
+%selection on 05112026
+% , dkaiAL156A_4_1a, dkaiAL156A_4_1b, dkaiAL156A_4_1c, dkaiAL156A_4_1d, dkaiAL156A_4_2a, dkaiAL156A_4_2b, dkaiAL156A_4_2c, dkaiAL156A_4_2d, dkaiAL156A_4_3a, dkaiAL156A_4_3c --> ALL SERIE 4 !!! looks like dkaiAL156A or even WT
+
+
+%first select
+%dkaiAL156A_1_1a,dkaiAL156A_1_1b,dkaiAL156A_1_1c,dkaiAL156A_1_1d,dkaiAL156A_1_2a,dkaiAL156A_1_2b,dkaiAL156A_1_2c,dkaiAL156A_1_2d,dkaiAL156A_1_3b,dkaiAL156A_1_3d,dkaiAL156A_2_1a,dkaiAL156A_2_1b,dkaiAL156A_2_1c,dkaiAL156A_2_1d,dkaiAL156A_2_2a,dkaiAL156A_2_2b,dkaiAL156A_2_2c,dkaiAL156A_2_2d,dkaiAL156A_3_1a,dkaiAL156A_3_1b,dkaiAL156A_3_1c,dkaiAL156A_3_1d,dkaiAL156A_3_2a,dkaiAL156A_3_2b,dkaiAL156A_3_2c,dkaiAL156A_3_2d,dkaiAL156A_3_3a,dkaiAL156A_3_3c
+

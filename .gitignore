@@ -1,0 +1,13 @@
+*.asv
+*.autosave
+.DS_Store
+
+*_MeanStd.csv
+*_individual_*.csv
+*_damping_coefficients.csv
+*_phase_coherence.csv
+*_phase_drift.csv
+*_plot.pdf
+*_plot.fig
+*.png
+*.svg

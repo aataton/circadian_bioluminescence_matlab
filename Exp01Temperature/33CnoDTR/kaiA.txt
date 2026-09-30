@@ -1,0 +1,14 @@
+kaiA_1_1_a, kaiA_1_2_a, kaiA_1_3_a, kaiA_1_4_a, kaiA_1_5_a, kaiA_1_6_a, kaiA_1_7_a, kaiA_1_8_a, kaiA_1_9_a, kaiA_1_1_b, kaiA_1_2_b, kaiA_1_3_b, kaiA_1_4_b, kaiA_1_5_b, kaiA_1_6_b, kaiA_1_7_b, kaiA_1_8_b, kaiA_1_9_b
+Exp01Temperature/33CnoDTR/kaiA_33C
+[28, 120]
+0
+[0, 0, 0, 0]
+1
+1
+1
+1
+1
+1
+9
+shadesOfRed
+24

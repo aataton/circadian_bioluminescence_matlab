@@ -1,0 +1,40 @@
+dkaiA_AnPse_1_1a, dkaiA_AnPse_1_1b, dkaiA_AnPse_1_1c, dkaiA_AnPse_1_1d, dkaiA_AnPse_1_2a, dkaiA_AnPse_1_2b, dkaiA_AnPse_1_2c, dkaiA_AnPse_1_2d, dkaiA_AnPse_2_1a, dkaiA_AnPse_2_1b, dkaiA_AnPse_2_1c, dkaiA_AnPse_2_1d, dkaiA_AnPse_2_2a, dkaiA_AnPse_2_2b, dkaiA_AnPse_2_2c, dkaiA_AnPse_2_2d, dkaiA_AnPse_2_3b, dkaiA_AnPse_2_3d, dkaiA_AnPse_3_1a, dkaiA_AnPse_3_1b, dkaiA_AnPse_3_1c, dkaiA_AnPse_3_1d, dkaiA_AnPse_3_2a, dkaiA_AnPse_3_2b, dkaiA_AnPse_3_2c, dkaiA_AnPse_3_2d, dkaiA_AnPse_3_3a, dkaiA_AnPse_3_3c, dkaiA_AnPse_4_1a, dkaiA_AnPse_4_1b, dkaiA_AnPse_4_1c, dkaiA_AnPse_4_1d, dkaiA_AnPse_4_2a, dkaiA_AnPse_4_2b, dkaiA_AnPse_4_2c, dkaiA_AnPse_4_2d, dkaiA_AnPse_4_3a
+Exp02Anabaena4LDcycles/dkaiA_AnPse
+[100, 114]
+0
+[0, 0, 0, 0]
+4
+1
+1
+1
+1
+1
+11
+shadesOfOrange
+96
+
+%  1 - Sample names (column names separated by ',')
+%  2 - Name or path for the sample series to save plot and analyses : e.g. 27C/kaiA148L156A_27C
+%  3 - Segments to analyse : e.g. [24, 84; 48, 108]
+%  4 - Detrend the data : 0 or 1
+%  5 - Shaded area (e.g. for dark pulse [50, 54; 54, 50])
+%  6 - Number of nights : 0, 1, 2 or etc.
+%  7 - Plot time series : 0 or 1
+%  8 - Plot means : 0 or 1
+%  9 - Plot the standard deviations : 0 or 1
+% 10 - PLot individual fitted curves : 0 or 1
+% 11 - Plot average fitted curves : 0 or 1
+% 12 - Height of the figure : ~ ylims/2
+% 13 - Color palette: e.g shadesOfOrange (max 20 shades or multicolor)
+
+
+% shadesOfRed,  shadesOfGreen,  shadesOfBlue,  shadesOfYellow,  shadesOfOrange,  shadesOfBrown, 
+% shadesOfGrey,  shadesOfPurple,  multicolor,   blackAndWhite (default)
+
+%selection on 05112026
+% , dkaiA_AnPse_4_3c
+
+
+%first select
+% ,dkaiA_AnPse_4_3c
+%dkaiA_AnPse_1_1a,dkaiA_AnPse_1_1b,dkaiA_AnPse_1_1c,dkaiA_AnPse_1_1d,dkaiA_AnPse_1_2a,dkaiA_AnPse_1_2b,dkaiA_AnPse_1_2c,dkaiA_AnPse_1_2d,dkaiA_AnPse_2_1a,dkaiA_AnPse_2_1b,dkaiA_AnPse_2_1c,dkaiA_AnPse_2_1d,dkaiA_AnPse_2_2a,dkaiA_AnPse_2_2b,dkaiA_AnPse_2_2c,dkaiA_AnPse_2_2d,dkaiA_AnPse_2_3b,dkaiA_AnPse_2_3d,dkaiA_AnPse_3_1a,dkaiA_AnPse_3_1b,dkaiA_AnPse_3_1c,dkaiA_AnPse_3_1d,dkaiA_AnPse_3_2a,dkaiA_AnPse_3_2b,dkaiA_AnPse_3_2c,dkaiA_AnPse_3_2d,dkaiA_AnPse_3_3a,dkaiA_AnPse_3_3c,dkaiA_AnPse_4_1a,dkaiA_AnPse_4_1b,dkaiA_AnPse_4_1c,dkaiA_AnPse_4_1d,dkaiA_AnPse_4_2a,dkaiA_AnPse_4_2b,dkaiA_AnPse_4_2c,dkaiA_AnPse_4_2d,dkaiA_AnPse_4_3a
