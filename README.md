@@ -20,7 +20,7 @@ This code is configured and tested with **MATLAB R2025a**.
 | `processSamples.m` | Reads and validates the 13-line (optional 14th line) parameter-file format. |
 | `analyzeAndPlotSegments.m` | Performs per-segment chirped damped-cosine fitting and writes period, phase, damping, chirp, peak, and drift outputs. |
 | `fitCosineCurve.m` | FFT-initialized, nonlinear least-squares fitting engine for a chirped damped cosine. |
-| `_RunMatlabFronTerm_*.sh` | Example Bash launchers that run `Plot_rawLuminescence.m` in MATLAB batch mode for multiple conditions. |
+| `RunMatlabFronTerm_*.sh` | Example Bash launchers that run `Plot_rawLuminescence.m` in MATLAB batch mode for multiple conditions. |
 | `Plot_summary.m` | User-editable configuration script for generating multi-series overlays and tiled summary plots. |
 | `run_luminescence_plots.m` | Summary-plot engine called by `Plot_summary.m`. |
 | `Q10_config.m` | User-editable configuration script for period-versus-temperature and \(Q_{10}\) figures. |
@@ -82,7 +82,7 @@ The repository does not require third-party MATLAB packages, Python, R, or inter
 4. Make the launcher scripts executable if needed.
 
    ```bash
-   chmod +x _RunMatlabFronTerm_*.sh
+   chmod +x RunMatlabFronTerm_*.sh
    ```
 
 5. For interactive MATLAB use, open MATLAB from the repository root or run:
@@ -171,7 +171,7 @@ repository-root/
 ├── Q10_plot.m
 ├── PRC_config.m
 ├── PRC_plot.m
-├── _RunMatlabFronTerm_MyExperiment.sh
+├── RunMatlabFronTerm_MyExperiment.sh
 └── MyExperiment/
     ├── plate_A.csv
     ├── condition_A/
@@ -184,22 +184,22 @@ Use forward slashes in paths for maximum portability. Keep parameter files and t
 
 ## Workflow
 
-Run the pipeline in the following order.
+Run the pipeline in the following order. Run the primary, per-condition analyses non-interactively from a terminal using the Bash (`.sh`) launchers. Once those analyses have generated the derived CSV files, open MATLAB interactively to produce summary luminescence plots, period/Q10 figures, and phase-response curves (PRCs).
 
 ### 1. Analyse individual groups
 
-The supplied `.sh` scripts are batch launchers. Each command assigns `fileName` and `paramfileName` in MATLAB's base workspace, then executes `Plot_rawLuminescence.m` without opening the MATLAB desktop.
+The supplied `.sh` scripts are Bash launchers for the primary, per-condition analyses. Run them from a terminal in the repository root. Each command assigns `fileName` and `paramfileName` in MATLAB's base workspace and executes `Plot_rawLuminescence.m` non-interactively using MATLAB batch mode.
 
 Run an existing launcher from the repository root:
 
 ```bash
-bash _RunMatlabFronTerm_Exp01_Q10s.sh
+bash RunMatlabFronTerm_Exp01_Q10s.sh
 ```
 
 or, if executable:
 
 ```bash
-./_RunMatlabFronTerm_Exp01_Q10s.sh
+./RunMatlabFronTerm_Exp01_Q10s.sh
 ```
 
 A minimal launcher command has this form:
@@ -218,9 +218,19 @@ paramfileName = 'MyExperiment/condition_A/strain_A.txt';
 run('Plot_rawLuminescence.m')
 ```
 
-### 2. Create summary luminescence figures
+### Open MATLAB for downstream plots
 
-After the single-group analyses have generated `_MeanStd.csv` files, edit and run:
+After Step 1 is complete, open MATLAB interactively and set its Current Folder to the directory containing `Plot_summary.m`, `Q10_config.m`, and `PRC_config.m` (the pipeline root). If MATLAB starts elsewhere, navigate to that directory in the Current Folder panel. Ensure the pipeline functions are on the MATLAB path; when the Current Folder is the pipeline root, run:
+
+```matlab
+addpath(pwd)
+```
+
+Run the remaining workflows in the MATLAB Command Window or Editor. Before each stage, verify that the required CSV outputs from Step 1 exist at the paths specified in the corresponding configuration script.
+
+### 2. Create summary luminescence figures in MATLAB
+
+After the single-group analyses have generated `_MeanStd.csv` files, open `Plot_summary.m` in the MATLAB Editor. Run its shared-settings section first, then the desired experiment section using **Ctrl+Enter**; alternatively, run the entire script (all configured experiments) using **F5** or:
 
 ```matlab
 run('Plot_summary.m')
@@ -239,9 +249,9 @@ run('Plot_summary.m')
 
 For annotation, `run_luminescence_plots.m` looks next to each input `_MeanStd.csv` for its matching `_individual_periods.csv` and `_individual_phases.csv` files. If either file is absent or has no valid numeric values, the corresponding annotation component is omitted.
 
-### 3. Create period/Q10 figures
+### 3. Create period/Q10 figures in MATLAB
 
-After individual group analyses have produced `_individual_periods.csv` files across temperatures, edit the strain registry and `plotDefs` blocks in:
+After individual group analyses have produced `_individual_periods.csv` files across temperatures, open `Q10_config.m` in MATLAB. Edit its strain registry and `plotDefs` blocks as needed, then run:
 
 ```matlab
 run('Q10_config.m')
@@ -263,9 +273,9 @@ Q_{10} = \left(\frac{\tau_{T_{\min}}}{\tau_{T_{\max}}}\right)^{10/(T_{\max}-T_{\
 
 where \(\tau\) values are predictions from the selected polynomial model. Configurable model choices are `linear`, `quadratic`, `cubic`, and `linearsubset`. `blankTemps` preserves an x-axis position while omitting data from display and regression; `excludeTemps` can exclude specified temperatures from a `linearsubset` regression.
 
-### 4. Create phase-response curves
+### 4. Create phase-response curves in MATLAB
 
-After reference and pulsed-condition analyses have produced `_individual_phases.csv` files, edit the color map, strain-style registry, and `plotDefs` blocks in:
+After reference and pulsed-condition analyses have produced `_individual_phases.csv` files, open `PRC_config.m` in MATLAB. Edit its color map, strain-style registry, and `plotDefs` blocks as needed, then run:
 
 ```matlab
 run('PRC_config.m')
@@ -371,7 +381,6 @@ Set line 14 in the parameter file to the time to be treated as phase zero. For e
 - Use `Q10_config.m` for strain labels, fit model, period limits, temperature colors, figure layout, and omitted/blank temperature positions.
 - Use `PRC_config.m` for PRC colors, strain labels, marker/line styles, figure layout, tile definitions, and data-path conventions.
 
-
 ## Troubleshooting
 
 | Symptom | Likely cause and resolution |
@@ -394,13 +403,9 @@ Set line 14 in the parameter file to the time to be treated as phase zero. For e
 - The period search is constrained to 18–30 h. Oscillations outside this range are not appropriate for the default fit settings without modifying `Plot_rawLuminescence.m`/`analyzeAndPlotSegments.m`.
 - Generated filenames are defined by parameter-file and configuration conventions. Renaming outputs manually can break downstream summary, Q10, or PRC path resolution.
 
-
-
 ### Third-party and platform notices
 
 - MATLAB and associated toolbox names are trademarks of The MathWorks, Inc. This repository is not affiliated with, endorsed by, or sponsored by The MathWorks, Inc.
-- Input datasets may be subject to separate ownership, consent, collaboration, publication, or repository-sharing restrictions. Confirm that raw data and metadata may legally and ethically be distributed before placing them in a public repository.
-- If any code or data in the repository originated from another person, laboratory, or project, preserve its original attribution and license terms and obtain permission before relicensing or redistributing it.
 
 ## Citation
 
@@ -411,4 +416,4 @@ The code for this pipeline was developed with assistance from Perplexity AI, and
 
 ## Contact
 
-For questions, bug reports, or requests, open a GitHub issue in the repository or contact **[Arnaud Taton and ataton@ucsd.edu]**.
+For questions, bug reports, or requests, open a GitHub issue in the repository or contact **Arnaud Taton** at <ataton@ucsd.edu>.
